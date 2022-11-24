@@ -92,7 +92,8 @@ function commander(cmd) {
       loopLines(projects, 'color margin', 80);
       break;
     case 'repo':
-      loopLines(help, 'color margin', 80);
+      addLine('Opening the source code...', 'color2', 80);
+      newTab(repo);
       break;
     case 'social':
       loopLines(social, 'color margin', 80);

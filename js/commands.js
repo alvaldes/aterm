@@ -1,8 +1,9 @@
 let twitter = 'http://www.twitter.com/alvaldes_';
-let linkedin = 'https://www.linkedin.com/in/forrestpknight/';
-let github = 'https://github.com/forrestknight/';
+let linkedin = 'https://www.linkedin.com/in/alvaldes/';
+let github = 'https://github.com/alvaldes/';
 let email = 'mailto:angelluis2605@gmail.com';
 let website = 'https://www.alvaldes.vercel.app/';
+let repo = 'https://github.com/alvaldes/aterm';
 let existCommands = [
   'about',
   'banner',
