@@ -23,10 +23,9 @@ let existCommands = [
   'weather',
 ];
 
-about = ['<br>', "Hello, I'm Angel Valdés👋", '<br>'];
+about = ["Hello, I'm Angel Valdés👋"];
 
 social = [
-  '<br>',
   'twitter           <a href="' +
     twitter +
     '" target="_blank">twitter/alvaldes_</a>',
@@ -36,13 +35,25 @@ social = [
   'github            <a href="' +
     github +
     '" target="_blank">github/alvaldes</a>',
-  '<br>',
 ];
 
-projects = ['<br>', 'On Progress ......', '<br>'];
+projects = ['On Progress ......'];
+
+themes = ['dark', 'light'];
+
+theme = [
+  'Usage: theme [arg]',
+  'Args:',
+  '  - ls: list all available themes',
+  '  - set: set a theme',
+  '  - random: set a tandom theme',
+  '<br>',
+  'Example:',
+  '  theme ls # to list all available themes',
+  '  theme set light # to set a theme',
+];
 
 help = [
-  '<br>',
   '<span class="command">about</span>              Who is alvaldes?',
   '<span class="command">banner</span>             Display the header',
   '<span class="command">clear | cls</span>        Clear the teminal',
@@ -58,7 +69,6 @@ help = [
   '<br>',
   '[TAB]              Trigger completion',
   '[Ctrl+l]           Clear terminal',
-  '<br>',
 ];
 
 banner = [

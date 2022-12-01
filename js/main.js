@@ -7,6 +7,8 @@ let terminal = document.getElementById('terminal');
 let commands = [];
 let git = 0;
 
+loadTheme();
+
 setTimeout(function () {
   loopLines(banner, '', 80);
   textarea.focus();
@@ -33,7 +35,13 @@ function enterKey(e) {
   if (e.keyCode == 13) {
     commands.push(command.innerHTML);
     git = commands.length;
-    addLine('guest@aterm.com:~$ ' + command.innerHTML, 'no-animation', 0);
+    addLine(
+      'visitor@aterm.com:~$ <span class="command">' +
+        command.innerHTML +
+        '</span>',
+      'liner no-animation',
+      0
+    );
     commander(command.innerHTML.toLowerCase());
     command.innerHTML = '';
     textarea.value = '';
@@ -111,14 +119,20 @@ function commander(cmd) {
       newTab(github);
       break;
     case 'theme':
-      loopLines(help, 'color margin', 80);
+      loopLines(theme, 'color margin', 80);
+      break;
+    case 'theme ls':
+      loopLines(themes, 'color margin', 80);
+      break;
+    case cmd.startsWith('theme set ') ? cmd : '':
+      switchTheme(cmd);
       break;
     case 'weather':
       loopLines(help, 'color margin', 80);
       break;
     default:
       addLine(
-        '<span class="inherit">Command not found. For a list of commands, type <span class="command">\'help\'</span>.</span>',
+        '<span>Command not found. For a list of commands, type <span class="command">\'help\'</span>.</span>',
         'error',
         100
       );
@@ -154,6 +168,7 @@ function addLine(text, style, time) {
 }
 
 function loopLines(name, style, timeout) {
+  name = [...name, '<br>'];
   name.forEach((item, index) => {
     addLine(item, style, index * timeout);
   });
@@ -172,4 +187,30 @@ function autoComplete() {
     textarea.value = arr[0];
     command.innerHTML = arr[0];
   }
+}
+
+function switchTheme(cmd) {
+  themeTxt = cmd.slice(10);
+  console.log(themeTxt);
+  if (themes.includes(themeTxt)) {
+    setTheme(themeTxt);
+    return;
+  }
+  loopLines(
+    [
+      `Theme '${themeTxt}' not found. Try 'theme ls' to see the list of available themes.`,
+    ],
+    'color margin',
+    80
+  );
+}
+
+function setTheme(theme) {
+  document.body.dataset.theme = theme;
+  localStorage.setItem('theme', theme);
+}
+
+function loadTheme() {
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  document.body.dataset.theme = currentTheme;
 }
