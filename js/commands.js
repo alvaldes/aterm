@@ -9,6 +9,7 @@ let existCommands = [
   'banner',
   'clear',
   'cls',
+  'date',
   'email',
   'github',
   'gui',
@@ -19,6 +20,8 @@ let existCommands = [
   'repo',
   'social',
   'theme',
+  'theme ls',
+  'theme set',
   'twitter',
   'weather',
 ];
@@ -57,6 +60,7 @@ help = [
   '<span class="command">about</span>              Who is alvaldes?',
   '<span class="command">banner</span>             Display the header',
   '<span class="command">clear | cls</span>        Clear the teminal',
+  '<span class="command">date</span>               Display the actual date',
   '<span class="command">email</span>              Send me an email',
   '<span class="command">gui</span>                Open the Portfolio Website',
   '<span class="command">help</span>               Check available commands',
@@ -69,6 +73,7 @@ help = [
   '<br>',
   '[TAB]              Trigger completion',
   '[Ctrl+l]           Clear terminal',
+  '[Ctrl+p]           Go back to previous command',
 ];
 
 banner = [

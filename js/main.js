@@ -25,6 +25,14 @@ function keyDown(e) {
     e.preventDefault();
     cls();
   }
+  if (e.ctrlKey && e.key == 'p') {
+    e.preventDefault();
+    previousCMD();
+  }
+  if (e.ctrlKey && e.key == 'u') {
+    e.preventDefault();
+    deleteCMD();
+  }
   if (e.key === 'Tab') {
     e.preventDefault();
     autoComplete();
@@ -47,9 +55,7 @@ function enterKey(e) {
     textarea.value = '';
   }
   if (e.keyCode == 38 && git != 0) {
-    git -= 1;
-    textarea.value = commands[git];
-    command.innerHTML = textarea.value;
+    previousCMD();
   }
   if (e.keyCode == 40 && git != commands.length) {
     git += 1;
@@ -75,6 +81,9 @@ function commander(cmd) {
       break;
     case 'cls':
       cls();
+      break;
+    case 'date':
+      getDate();
       break;
     case 'email':
       addLine(
@@ -179,6 +188,23 @@ function cls() {
     terminal.innerHTML = '<a id="before"></a>';
     before = document.getElementById('before');
   }, 1);
+}
+
+function previousCMD() {
+  if (git != 0) {
+    git -= 1;
+    textarea.value = commands[git];
+    command.innerHTML = textarea.value;
+  }
+}
+
+function deleteCMD() {
+  command.value = '';
+  textarea.value = '';
+}
+
+function getDate() {
+  loopLines([new Date().toString()], 'color margin', 80);
 }
 
 function autoComplete() {
