@@ -1,6 +1,6 @@
 :root {
   /* default dark mode */
-  --text-color: #519975;
+  --text-color: #73abad;
   --bg-color: #211d1b;
   --selection-color: #519975;
   --cursor-color: #73abad;
@@ -16,8 +16,8 @@
   --link-hover-bg: #211d1b;
 }
 
-[data-theme='dark']{
-  --text-color: #519975;
+[data-theme='atnight']{
+  --text-color: #73abad;
   --bg-color: #211d1b;
   --selection-color: #519975;
   --cursor-color: #73abad;
@@ -33,7 +33,7 @@
   --link-hover-bg: #211d1b;
 }
 
-[data-theme='light']{
+[data-theme='atday']{
   --text-color: #33415a;
   --bg-color: #eff3f3;
   --selection-color: #308efd;
@@ -48,4 +48,38 @@
   --link-color: #117dbd;
   --link-hover-color: #308efd;
   --link-hover-bg: #eff3f3;
+}
+
+[data-theme='gruvboxdark']{
+  --text-color: #ebdbb2;
+  --bg-color: #282828;
+  --selection-color: #308efd;
+  --cursor-color: #a89984;
+  --command-color: #98971a;
+  --liner-color: #d79921;
+  --index-color: #a8a8a8;
+  --color2-color: #a89984;
+  --cmd-color: #98971a;
+  --cmd-shadow: none;
+  --error-color: #ac2326;
+  --link-color: #d79921;
+  --link-hover-color: #282828;
+  --link-hover-bg: #d79921;
+}
+
+[data-theme='belafonteday']{
+  --text-color: #46373c;
+  --bg-color: #d5ccba;
+  --selection-color: #308efd;
+  --cursor-color: #8f8770;
+  --command-color: #8f8770;
+  --liner-color: #ddac62;
+  --index-color: #a8a8a8;
+  --color2-color: #a89984;
+  --cmd-color: #46373c;
+  --cmd-shadow: none;
+  --error-color: #ac2326;
+  --link-color: #ddac62;
+  --link-hover-color: #d5ccba;
+  --link-hover-bg: #ddac62;
 }

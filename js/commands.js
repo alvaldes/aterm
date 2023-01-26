@@ -26,7 +26,11 @@ let existCommands = [
   'weather',
 ];
 
-about = ["Hello, I'm Angel Valdés👋"];
+about = [
+  "Hello, I'm Angel Valdés👋",
+  'Full Stack Software Engineer 🎓 base on La Havana, Cuba🌴.',
+  'To know more about me see my <span class="command">social</span> and my portfolio page <span class="command">gui</span>.',
+];
 
 social = [
   'twitter           <a href="' +
@@ -42,7 +46,7 @@ social = [
 
 projects = ['On Progress ......'];
 
-themes = ['dark', 'light'];
+themes = ['atnight', 'atday', 'gruvboxdark', 'belafonteday'];
 
 theme = [
   'Usage: theme [arg]',
