@@ -136,8 +136,8 @@ function commander(cmd) {
     case cmd.startsWith('theme set ') ? cmd : '':
       switchTheme(cmd);
       break;
-    case 'weather':
-      loopLines(help, 'color margin', 80);
+    case cmd.startsWith('weather') ? cmd : '':
+      loadWeather(cmd);
       break;
     default:
       addLine(
@@ -239,4 +239,18 @@ function setTheme(theme) {
 function loadTheme() {
   const currentTheme = localStorage.getItem('theme') || 'dark';
   document.body.dataset.theme = currentTheme;
+}
+
+async function loadWeather(cmd) {
+  let location = cmd.slice(8);
+  await fetch(`https://wttr.in/${location}?ATm`)
+    .then((response) => {
+      response.text().then((text) => {
+        array = text.split('\n');
+        loopLines(array, 'color margin', 80);
+      });
+    })
+    .catch(() => {
+      loopLines(['Network Error'], 'error', 80);
+    });
 }
