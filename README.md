@@ -28,7 +28,7 @@ My portfolio website in terminal version developed just with HTML, CSS and JavaS
 
 ## Multiple Theme
 
-Currently, this website supports 2 themes. Type `theme` in the terminal for more info.
+Currently, this website supports 4 themes. Type `theme` in the terminal for more info.
 ![multitheme.png](img/multitheme.png)
 
 ## LightHouse Score

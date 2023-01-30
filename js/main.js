@@ -106,7 +106,7 @@ function commander(cmd) {
       addLine('<br>', 'command', 80 * commands.length + 50);
       break;
     case 'projects':
-      loopLines(projects, 'color margin', 80);
+      loadProjects();
       break;
     case 'repo':
       addLine('Opening the source code...', 'color2', 80);
@@ -253,4 +253,31 @@ async function loadWeather(cmd) {
     .catch(() => {
       loopLines(['Network Error'], 'error', 80);
     });
+}
+
+async function loadProjects() {
+  let response = await fetch(
+    `https://gh-pinned-repos.egoist.dev/?username=alvaldes`
+  ).catch(() => {
+    loopLines(
+      [
+        'Network Error. To know more see my <a href="https://alvaldes.vercel.app/" target="_blank">portfolio page</a> or just type <span class="command">gui</span>',
+      ],
+      'error',
+      80
+    );
+  });
+  let data = await response.json();
+  console.log(data);
+  let array = data.map((item) => {
+    return `<a href="${item.link} target="_blank">${item.repo}:</a> ${item.description} `;
+  });
+  array = [
+    ...array,
+    '<br>',
+    'To know more see my <a href="https://alvaldes.vercel.app/" target="_blank">portfolio page</a> or just type <span class="command">gui</span>.',
+  ];
+  loopLines(array, 'color margin', 80);
+
+  // loopLines(data, 'color margin', 80);
 }
