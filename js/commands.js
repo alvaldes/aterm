@@ -22,6 +22,10 @@ let existCommands = [
   'theme',
   'theme ls',
   'theme set',
+  'theme set atnight',
+  'theme set atday',
+  'theme set gruvboxdark',
+  'theme set belafonteday',
   'twitter',
   'weather',
 ];
@@ -81,7 +85,7 @@ help = [
 ];
 
 banner = [
-  '<span class="index">All up to date | aterm v1.0. </span>',
+  '<span class="index">All up to date | aterm v2.3. </span>',
   '              .          .              ,                ,    ,          .                 .',
   '.        &bsol;          .                  __       .           *            ,',
   '   .      &bsol;   ,                       /&bsol; &bsol;__',

@@ -5,6 +5,7 @@ let liner = document.getElementById('liner');
 let command = document.getElementById('typer');
 let textarea = document.getElementById('texter');
 let terminal = document.getElementById('terminal');
+let lastTab;
 
 let commands = [];
 let git = 0;
@@ -15,6 +16,12 @@ setTimeout(function () {
   loopLines(banner, '', 80);
   textarea.focus();
 }, 100);
+
+textarea.addEventListener('blur', function () {
+  setTimeout(function () {
+    textarea.focus();
+  }, 20);
+});
 
 window.addEventListener('keyup', enterKey);
 window.addEventListener('keydown', keyDown);
@@ -37,7 +44,14 @@ function keyDown(e) {
   }
   if (e.key === 'Tab') {
     e.preventDefault();
-    autoComplete();
+    let now = new Date().getTime();
+    let timesince = now - lastTab;
+    if (timesince < 600 && timesince > 0) {
+      showComplete(command.innerHTML.toLowerCase());
+    } else {
+      autoComplete();
+    }
+    lastTab = new Date().getTime();
   }
 }
 
@@ -209,8 +223,19 @@ function getDate() {
   loopLines([new Date().toString()], 'color margin', 80);
 }
 
+function showComplete(cmd) {
+  let array = existCommands.filter((item) => item.startsWith(cmd));
+  if (array.length > 0) {
+    loopLines([array.join(', ')], 'color margin', 80);
+  } else {
+    loopLines(['No existing commands.'], 'color margin', 80);
+  }
+}
+
 function autoComplete() {
-  let arr = existCommands.filter((item) => item.startsWith(command.innerHTML));
+  let arr = existCommands.filter((item) =>
+    item.startsWith(command.innerHTML.toLowerCase())
+  );
   if (arr.length === 1) {
     textarea.value = arr[0];
     command.innerHTML = arr[0];
@@ -218,7 +243,7 @@ function autoComplete() {
 }
 
 function switchTheme(cmd) {
-  themeTxt = cmd.slice(10);
+  let themeTxt = cmd.slice(10);
   console.log(themeTxt);
   if (themes.includes(themeTxt)) {
     setTheme(themeTxt);
