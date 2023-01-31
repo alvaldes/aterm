@@ -57,11 +57,11 @@ theme = [
   'Args:',
   '  - ls: list all available themes',
   '  - set: set a theme',
-  '  - random: set a tandom theme',
+  '  - random: set a random theme',
   '<br>',
   'Example:',
   '  theme ls # to list all available themes',
-  '  theme set light # to set a theme',
+  '  theme set atday # to set a theme',
 ];
 
 help = [

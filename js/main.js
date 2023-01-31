@@ -225,10 +225,22 @@ function getDate() {
 
 function showComplete(cmd) {
   let array = existCommands.filter((item) => item.startsWith(cmd));
-  if (array.length > 0) {
+  if (cmd === 't') {
+    array = ['theme', 'twitter'];
+  } else if (cmd.length > 1 && 'theme '.includes(cmd)) {
+    array = ['theme ls', 'theme set [theme_name]'];
+  } else if (cmd.length > 6 && 'theme set'.includes(cmd)) {
+    array = themes;
+  }
+  if (array.length > 1) {
+    addLine(
+      'visitor@aterm.com:~$ <span class="command">' +
+        command.innerHTML +
+        '</span>',
+      'liner no-animation',
+      0
+    );
     loopLines([array.join(', ')], 'color margin', 80);
-  } else {
-    loopLines(['No existing commands.'], 'color margin', 80);
   }
 }
 
