@@ -22,10 +22,11 @@ let existCommands = [
   'theme',
   'theme ls',
   'theme set',
-  'theme set atnight',
   'theme set atday',
-  'theme set gruvboxdark',
+  'theme set atnight',
   'theme set belafonteday',
+  'theme set gruvboxdark',
+  'theme set random',
   'twitter',
   'weather',
 ];
@@ -50,14 +51,14 @@ social = [
 
 projects = ['On Progress ......'];
 
-themes = ['atnight', 'atday', 'gruvboxdark', 'belafonteday'];
+themes = ['atday', 'atnight', 'belafonteday', 'gruvboxdark'];
 
 theme = [
   'Usage: theme [arg]',
   'Args:',
   '  - ls: list all available themes',
   '  - set: set a theme',
-  '  - random: set a random theme',
+  '  - set random: set a random theme',
   '<br>',
   'Example:',
   '  theme ls # to list all available themes',
@@ -85,7 +86,7 @@ help = [
 ];
 
 banner = [
-  '<span class="index">All up to date | aterm v2.3. </span>',
+  '<span class="index">All up to date | aterm v2.4. </span>',
   '              .          .              ,                ,    ,          .                 .',
   '.        &bsol;          .                  __       .           *            ,',
   '   .      &bsol;   ,                       /&bsol; &bsol;__',

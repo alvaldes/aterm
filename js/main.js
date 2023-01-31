@@ -228,7 +228,7 @@ function showComplete(cmd) {
   if (cmd === 't') {
     array = ['theme', 'twitter'];
   } else if (cmd.length > 1 && 'theme '.includes(cmd)) {
-    array = ['theme ls', 'theme set [theme_name]'];
+    array = ['theme ls', 'theme set [theme_name]', 'theme set random'];
   } else if (cmd.length > 6 && 'theme set'.includes(cmd)) {
     array = themes;
   }
@@ -256,7 +256,9 @@ function autoComplete() {
 
 function switchTheme(cmd) {
   let themeTxt = cmd.slice(10);
-  console.log(themeTxt);
+  if (themeTxt === 'random') {
+    themeTxt = randomTheme();
+  }
   if (themes.includes(themeTxt)) {
     setTheme(themeTxt);
     return;
@@ -268,6 +270,11 @@ function switchTheme(cmd) {
     'color margin',
     80
   );
+}
+
+function randomTheme() {
+  var randomNumber = Math.floor(Math.random() * themes.length);
+  return themes[randomNumber];
 }
 
 function setTheme(theme) {
