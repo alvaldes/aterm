@@ -34,7 +34,7 @@ Currently, this website supports 4 themes. Type `theme` in the terminal for more
 ## LightHouse Score
 
 <p align="center">
-<img width="710" alt="aterm Lighthouse Score" src="public/lighthouse-result.png">
+<img width="710" alt="aterm Lighthouse Score" src="img/lighthouse-result.png">
 </p>
 
 ## Running Locally
