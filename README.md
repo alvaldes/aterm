@@ -51,14 +51,6 @@ Go to the project directory
 cd aterm
 ```
 
-Add the `apikey.js` file
-
-```bash
-const GITHUB_API_KEY = 'TOKEN';
-
-export default GITHUB_API_KEY;
-```
-
 Open the index file
 
 ```bash
