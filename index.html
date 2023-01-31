@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A interactive web terminal by Angel L. Valdés"/>
     <title>aterm | Terminal</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/themes.css" />
@@ -11,9 +12,10 @@
   </head>
   <body data-theme="" id="page">
     <div id="terminal">
-      <a id="before"></a>
+      <a id="before" href="#"></a>
     </div>
     <div id="command" onclick="$('texter').focus();">
+      <label for="texter" style="display:none">Command Line</label>
       <textarea
         type="text"
         id="texter"
