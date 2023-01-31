@@ -256,9 +256,14 @@ async function loadWeather(cmd) {
 }
 
 async function loadProjects() {
-  let response = await fetch(
-    `https://gh-pinned-repos.egoist.dev/?username=alvaldes`
-  ).catch(() => {
+  let response = await fetch(`https://api.github.com/graphql`, {
+    method: 'POST',
+    headers: {
+      Authorization: 'bearer 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',
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: '{"query":"{\\n  user(login: \\"alvaldes\\") {\\n pinnedItems(first: 6, types: REPOSITORY) {\\n nodes {\\n ... on Repository {\\n name\\n description\\n url\\n }\\n }\\n }\\n }\\n}"\n',
+  }).catch(() => {
     loopLines(
       [
         'Network Error. To know more see my <a href="https://alvaldes.vercel.app/" target="_blank">portfolio page</a> or just type <span class="command">gui</span>',
@@ -267,10 +272,10 @@ async function loadProjects() {
       80
     );
   });
-  let data = await response.json();
-  console.log(data);
-  let array = data.map((item) => {
-    return `<a href="${item.link} target="_blank">${item.repo}:</a> ${item.description} `;
+  const { data } = await response.json();
+  const pinned = data.user.pinnedItems.nodes;
+  let array = pinned.map((item) => {
+    return `<a href="${item.url} target="_blank">${item.name}:</a> ${item.description} `;
   });
   array = [
     ...array,
@@ -278,6 +283,4 @@ async function loadProjects() {
     'To know more see my <a href="https://alvaldes.vercel.app/" target="_blank">portfolio page</a> or just type <span class="command">gui</span>.',
   ];
   loopLines(array, 'color margin', 80);
-
-  // loopLines(data, 'color margin', 80);
 }
