@@ -1,3 +1,5 @@
+import GITHUB_API_KEY from './apikey.js';
+
 let before = document.getElementById('before');
 let liner = document.getElementById('liner');
 let command = document.getElementById('typer');
@@ -259,7 +261,7 @@ async function loadProjects() {
   let response = await fetch(`https://api.github.com/graphql`, {
     method: 'POST',
     headers: {
-      Authorization: 'bearer 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',
+      Authorization: `bearer ${GITHUB_API_KEY}`,
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: '{"query":"{\\n  user(login: \\"alvaldes\\") {\\n pinnedItems(first: 6, types: REPOSITORY) {\\n nodes {\\n ... on Repository {\\n name\\n description\\n url\\n }\\n }\\n }\\n }\\n}"\n',
