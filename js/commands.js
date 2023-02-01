@@ -105,3 +105,21 @@ banner = [
   '<span class="color2">Welcome to my interactive web terminal.</span>',
   '<span class="color2">For a list of available commands, type</span> <span class="command">\'help\'</span><span class="color2">.</span>',
 ];
+
+banner_min = [
+  '<span class="index">All up to date | aterm v2.4. </span>',
+  '   .              ,                ,               ,',
+  '.                __       .           *   ,',
+  '                /&bsol; &bsol;__',
+  '  .     .__     &bsol; &bsol; ,_&bsol;     __    _ __    ___ ___.   ,',
+  '   ,   /&#39;__`&bsol;    &bsol; &bsol; &bsol;/   /&#39;__`&bsol; /&bsol;`&#39;__&bsol;/&#39; __` _` &bsol;',
+  '      /&bsol; &bsol;L&bsol;.&bsol;_   &bsol; &bsol; &bsol;_ /&bsol;  __/ &bsol; &bsol; &bsol;/ /&bsol; &bsol;/&bsol; &bsol;/&bsol; &bsol; .',
+  '*   . &bsol; &bsol;__/.&bsol;_&bsol;   &bsol; &bsol;__&bsol;&bsol; &bsol;____&bsol; &bsol; &bsol;_&bsol; &bsol; &bsol;_&bsol; &bsol;_&bsol; &bsol;_&bsol;',
+  '.      &bsol;/__/&bsol;/_/    &bsol;/__/ &bsol;/____/  &bsol;/_/  &bsol;/_/&bsol;/_/&bsol;/_/',
+  '                   ,          .                        ',
+  '____^/___^--____/___O_//---/_---__/____O______//---/_____',
+  "/^   ^  ^   ^^ ^  ' ^       --^    ^         ^^ ^  ' ^ -",
+  '--  __--___^  ^  -  --  __    ___--  ^___@alvaldes --  __',
+  '<span class="color2">Welcome to my interactive web terminal.</span>',
+  '<span class="color2">For a list of available commands, type</span> <span class="command">\'help\'</span><span class="color2">.</span>',
+];

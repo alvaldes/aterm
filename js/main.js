@@ -13,7 +13,7 @@ let git = 0;
 loadTheme();
 
 setTimeout(function () {
-  loopLines(banner, '', 80);
+  loadBanner();
   textarea.focus();
 }, 100);
 
@@ -90,7 +90,7 @@ function commander(cmd) {
       loopLines(about, 'color margin', 80);
       break;
     case 'banner':
-      loopLines(banner, '', 80);
+      loadBanner();
       break;
     case 'clear':
       cls();
@@ -197,6 +197,13 @@ function loopLines(name, style, timeout) {
   name.forEach((item, index) => {
     addLine(item, style, index * timeout);
   });
+}
+
+function loadBanner() {
+  console.log(window.screen.width);
+
+  let logo_banner = window.screen.width > 613 ? banner : banner_min;
+  loopLines(logo_banner, '', 80);
 }
 
 function cls() {

@@ -128,3 +128,20 @@ a:hover {
 a:focus {
   outline: 0;
 }
+
+@media (max-width: 820px) {
+  #page * {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 720px) {
+  #page * {
+    font-size: 12px;
+  }
+}
+@media (max-width: 613px) {
+  #page * {
+    font-size: 15px;
+  }
+}
