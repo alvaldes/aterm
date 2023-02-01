@@ -86,7 +86,7 @@ help = [
 ];
 
 banner = [
-  '<span class="index">All up to date | aterm v2.4. </span>',
+  '<span class="index">All up to date | aterm v2.5. </span>',
   '              .          .              ,                ,    ,          .                 .',
   '.        &bsol;          .                  __       .           *            ,',
   '   .      &bsol;   ,                       /&bsol; &bsol;__',
@@ -107,7 +107,7 @@ banner = [
 ];
 
 banner_min = [
-  '<span class="index">All up to date | aterm v2.4. </span>',
+  '<span class="index">All up to date | aterm v2.5. </span>',
   '   .              ,                ,               ,',
   '.                __       .           *   ,',
   '                /&bsol; &bsol;__',
